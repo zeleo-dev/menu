@@ -1,0 +1,223 @@
+
+
+/* gneral */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color:#7c71e4;
+    --secondary-color:#4d0866;
+    --third-color:#fff;
+    --fourth-color:#8f8f8f;
+
+    --primary-font: 'Inria Serif', serif;
+    --secondary-font: 'Arapey', serif;
+
+/* variable css à utiliser ar la suite dans notre html */
+}
+
+html{
+    font-size: 16px;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+nav {
+    height: 100%;
+
+}
+
+/* toggle */
+.toggle {
+    color: var(--third-color);
+    font-size: 2rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 20;
+    cursor: pointer;
+
+}
+
+
+.ouvrir { 
+    display: block;
+}
+
+.fermer {
+    display: none;
+
+}
+
+.open .ouvrir {
+    display: none;
+}
+
+.open .fermer {
+    display: block;
+}
+/* Menu */
+
+.menu{ 
+    height: 100vh;    
+    display: flex;
+}
+
+.menu_left, .menu_right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu_left{
+    transform: translateX(-100%);
+    
+}
+.menu_right{
+    transform: translateX(100%);
+}
+
+.open .menu_left, .open .menu_right{
+    transform: translateX(0);
+}
+
+/*inner menu left*/
+
+.menu_left_inner_item{
+    font-family: var(--primary-font);
+    font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.menu_left_inner_item :last-child{
+    margin: bottom 0;
+
+}
+
+.menu_left_inner_item a{
+    color: var(--third-color);
+    text-decoration: none;
+}
+
+
+.menu_left_inner_item a:hover{
+    color: var(--secondary-color);
+    transition: color 1s;
+}
+
+
+.menu_left_inner_item_small{
+    font-family: var(--secondary-font);
+    font-size: 1.25rem;
+
+}
+
+.menu_left, .menu_right{
+    width: 50%;
+    height: 100%;
+    background: var(--primary-color);
+    transition: transform 0.5s;
+}
+
+/*inner riht menu */
+
+.menu_right_inner_item_title{
+    font-family: var(--primary-font);
+    font-size: 3rem;
+    color: var(--third-color);
+
+}
+
+.menu_right_inner_item ul{
+    list-style: none;
+}
+
+.menu_right_inner_item ul li{
+margin-top: 0.5rem;
+}
+
+.menu_right_inner_item ul li a{
+    color: var(--fourth-color);
+    font-family: var(--secondary-font);
+    text-decoration: none;
+    font-size: 1.25rem;
+    transition: color 1s;
+
+
+}
+
+.menu_right_inner_item ul li a:hover{
+    color: var(--secondary-color);
+
+}
+
+
+.menu_right_inner_item :first-child{
+    margin-bottom: 3rem;
+}
+
+/* separation*/
+
+.sep { 
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    background: var(--secondary-color);
+
+}
+
+.sep__icon{
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--third-color);
+    font-family: var(--secondary-font);
+    font-size: 1.5rem;
+    opacity: 0;
+}
+
+/* hero */
+.hero { 
+    background: url(img/your-lifestyle-business-rOYAYXHgEh4-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+
+}
+
+@media all and (max-width: 767px){
+    .menu_right, .sep__icon{
+        display: none;
+    }
+
+    .menu_left{
+        width: 100%;      
+    }
+
+    .sep {
+        width: 1rem;
+        left: 0;
+    }
+} 
